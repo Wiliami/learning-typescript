@@ -24,11 +24,17 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importStar(require("express"));
+const database_1 = require("./database");
 const app = (0, express_1.default)();
 app.use((0, express_1.json)());
+const data = {
+    name: 'Wiliamis',
+    age: 26,
+    gender: 'Male'
+};
 app.get("/", (req, res) => {
-    return res.json({ message: "Hello, Typescript!" });
+    return res.send(`Usuário cadastrado com sucesso: ', ${JSON.stringify(database_1.createUser)}`);
 });
-app.listen(3000, () => {
-    console.log("🚀 Server started on http://localhost:3000");
+app.listen(3334, () => {
+    console.log("🚀 Server started on http://localhost:3334");
 });
