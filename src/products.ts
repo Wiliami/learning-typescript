@@ -5,7 +5,7 @@ interface Product {
 };
 
 
-const product: Product = {
+export const product: Product = {
     item: 'Lápis',
     value: 20,
     description: "Produto escolar"

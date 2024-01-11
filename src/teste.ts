@@ -21,7 +21,7 @@ saveUserToDatabase({
 });
 
 
-function createUser(dataUser: CreateUser) {
+export function createUser(dataUser: CreateUser) {
     console.log(dataUser);
 };
 

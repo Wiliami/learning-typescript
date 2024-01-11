@@ -25,19 +25,37 @@ var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__ge
 // src/main.ts
 var import_express = __toESM(require("express"));
 
-// src/database.ts
-var createUser = {
-  id: 1,
-  name: "Teste",
-  email: "user.teste@gmail.com",
-  password: "123456"
+// src/teste.ts
+function saveUserToDatabase(user) {
+  console.log(user);
+}
+saveUserToDatabase({
+  name: "Wiliamis",
+  age: 26
+});
+function createUser(dataUser) {
+  console.log(dataUser);
+}
+createUser({
+  name: "Wiliamis",
+  email: "oliveirawiliamis34@gmail.com",
+  password: "12345678",
+  telephone: 99999999
+});
+
+// src/products.ts
+var product = {
+  item: "L\xE1pis",
+  value: 20,
+  description: "Produto escolar"
 };
+console.log(product);
 
 // src/main.ts
 var app = (0, import_express.default)();
 app.use((0, import_express.json)());
 app.get("/", (req, res) => {
-  return res.send(`Usu\xE1rio cadastrado com sucesso: ', ${JSON.stringify(createUser)}`);
+  return res.json({ product, createUser });
 });
 app.listen(3334, () => {
   console.log("\u{1F680} Server started on http://localhost:3334");

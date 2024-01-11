@@ -1,11 +1,13 @@
 import express, { json } from "express";
-import { createUser } from './database'
+// import {  } from './database';
+import { createUser } from "./teste";
+import { product } from "./products";
 
 const app = express();
 app.use(json());
 
 app.get("/", (req, res) => {
-    return res.send(`Usuário cadastrado com sucesso: ', ${JSON.stringify(createUser)}`);
+    return res.json({ product, createUser });
 });
 
 
