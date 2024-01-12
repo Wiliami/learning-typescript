@@ -11,6 +11,28 @@ interface User {
     gender: string
 };
 
+interface ListUser {
+    name: string
+    age: number
+    gender: string
+    salary: number
+    status: string
+}
+
+
+export function listUsers(user: ListUser) {
+    return user;
+}
+
+listUsers({
+    name:'Wiliamis',
+    age: 26,
+    gender:'Masculino',
+    salary: 1412,
+    status: 'Ativo'
+});
+
+
 export const database: User = {
     name: 'Wiliamis',
     age: 26,

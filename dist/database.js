@@ -21,9 +21,20 @@ var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: tru
 var database_exports = {};
 __export(database_exports, {
   createUser: () => createUser,
-  database: () => database
+  database: () => database,
+  listUsers: () => listUsers
 });
 module.exports = __toCommonJS(database_exports);
+function listUsers(user) {
+  return user;
+}
+listUsers({
+  name: "Wiliamis",
+  age: 26,
+  gender: "Masculino",
+  salary: 1412,
+  status: "Ativo"
+});
 var database = {
   name: "Wiliamis",
   age: 26,
@@ -38,5 +49,6 @@ var createUser = {
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {
   createUser,
-  database
+  database,
+  listUsers
 });
