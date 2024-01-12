@@ -1,15 +1,15 @@
-interface CreateUser {
-    id: number,
-    name: string,
-    email: string,
-    password: string,
-};
-
 interface User {
-    name: string,
-    age: number,
+    name: string
+    age: number
     gender: string
-};
+}
+
+interface CreateUser {
+    id: number
+    name: string
+    email: string
+    password: string
+}
 
 interface ListUser {
     name: string
