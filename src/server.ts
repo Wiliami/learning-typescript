@@ -1,14 +1,5 @@
-import express, { json } from "express";
+import { App } from "./app";
 
-const app = express();
-app.use(json());
+const app = new App;
 
-
-app.get('/', (req, res) => {
-    return res.send("Hello World"); 
-});
-
-
-app.listen(3334, () => {
-    console.log("Server start on port http://localhost:3334 🚀");
-});
+app.listen(3335);

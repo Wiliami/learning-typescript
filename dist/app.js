@@ -5,6 +5,10 @@ var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
 var __getOwnPropNames = Object.getOwnPropertyNames;
 var __getProtoOf = Object.getPrototypeOf;
 var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __export = (target, all) => {
+  for (var name in all)
+    __defProp(target, name, { get: all[name], enumerable: true });
+};
 var __copyProps = (to, from, except, desc) => {
   if (from && typeof from === "object" || typeof from === "function") {
     for (let key of __getOwnPropNames(from))
@@ -21,14 +25,35 @@ var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__ge
   isNodeMode || !mod || !mod.__esModule ? __defProp(target, "default", { value: mod, enumerable: true }) : target,
   mod
 ));
+var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
 
-// src/main.ts
-var import_express = __toESM(require("express"));
-var app = (0, import_express.default)();
-app.use((0, import_express.json)());
-app.get("/", (req, res) => {
-  return res.send("Ol\xE1, mundo!");
+// src/app.ts
+var app_exports = {};
+__export(app_exports, {
+  App: () => App
 });
-app.listen(3334, () => {
-  console.log("\u{1F680} Server started on http://localhost:3334");
+module.exports = __toCommonJS(app_exports);
+var import_express = __toESM(require("express"));
+var App = class {
+  constructor() {
+    this.app = (0, import_express.default)();
+    this.config();
+    this.routes();
+  }
+  config() {
+    this.app.use(import_express.default.json());
+    this.app.use(import_express.default.urlencoded({ extended: true }));
+  }
+  routes() {
+    this.app.get("/", (req, res) => {
+      return res.json({ ok: true });
+    });
+  }
+  listen(port) {
+    this.app.listen(port, () => console.log("Server is running on port htpp://localhost:3335"));
+  }
+};
+// Annotate the CommonJS export names for ESM import in node:
+0 && (module.exports = {
+  App
 });

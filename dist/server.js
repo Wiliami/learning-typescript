@@ -22,13 +22,28 @@ var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__ge
   mod
 ));
 
-// src/server.ts
+// src/app.ts
 var import_express = __toESM(require("express"));
-var app = (0, import_express.default)();
-app.use((0, import_express.json)());
-app.get("/", (req, res) => {
-  return res.send("Hello World");
-});
-app.listen(3334, () => {
-  console.log("Server start on port http://localhost:3334 \u{1F680}");
-});
+var App = class {
+  constructor() {
+    this.app = (0, import_express.default)();
+    this.config();
+    this.routes();
+  }
+  config() {
+    this.app.use(import_express.default.json());
+    this.app.use(import_express.default.urlencoded({ extended: true }));
+  }
+  routes() {
+    this.app.get("/", (req, res) => {
+      return res.json({ ok: true });
+    });
+  }
+  listen(port) {
+    this.app.listen(port, () => console.log("Server is running on port htpp://localhost:3335"));
+  }
+};
+
+// src/server.ts
+var app = new App();
+app.listen(3335);
