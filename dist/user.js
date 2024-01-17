@@ -26,6 +26,6 @@ module.exports = __toCommonJS(user_exports);
 var import_express = require("express");
 var router = (0, import_express.Router)();
 router.get("/", (req, res) => {
-  return res.json({ message: "Rota de usu\xE1rios!" });
+  return res.render("users");
 });
 var user_default = router;

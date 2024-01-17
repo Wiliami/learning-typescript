@@ -23,32 +23,47 @@ var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__ge
 ));
 
 // src/app.ts
-var import_express2 = __toESM(require("express"));
+var import_express3 = __toESM(require("express"));
+var import_express_handlebars = require("express-handlebars");
+var import_path = __toESM(require("path"));
 
-// src/routes/user.ts
+// src/routes/home.ts
 var import_express = require("express");
 var router = (0, import_express.Router)();
 router.get("/", (req, res) => {
-  return res.json({ message: "Ol\xE1, mundo!" });
+  return res.render("home");
 });
-var user_default = router;
+var home_default = router;
+
+// src/routes/user.ts
+var import_express2 = require("express");
+var router2 = (0, import_express2.Router)();
+router2.get("/", (req, res) => {
+  return res.json({ message: "Rota de usu\xE1rios!" });
+});
+var user_default = router2;
 
 // src/app.ts
 var App = class {
   constructor() {
-    this.app = (0, import_express2.default)();
+    this.app = (0, import_express3.default)();
     this.config();
     this.routes();
   }
   config() {
-    this.app.use(import_express2.default.json());
-    this.app.use(import_express2.default.urlencoded({ extended: true }));
+    this.app.use(import_express3.default.static(__dirname + "/public"));
+    this.app.set("views", import_path.default.join(__dirname, "views"));
+    this.app.engine(".hbs", (0, import_express_handlebars.engine)({ extname: ".hbs" }));
+    this.app.set("view engine", ".hbs");
+    this.app.use(import_express3.default.json());
+    this.app.use(import_express3.default.urlencoded({ extended: true }));
   }
   routes() {
+    this.app.use("/", home_default);
     this.app.use("/user", user_default);
   }
   listen(port) {
-    this.app.listen(port, () => console.log("Server is running on port htpp://localhost:3335"));
+    this.app.listen(port, () => console.log("Server is running on port http://localhost:3335"));
   }
 };
 

@@ -7,11 +7,12 @@
   "scripts": {
     "start": "tsx src/teste.ts",
     "start:dev": "tsx watch src/teste.ts",
-    "build": "tsup src/Utilidades.ts",
+    "build": "tsup src/routes/user.ts",
     "test": "jest"
   },
   "dependencies": {
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "express-handlebars": "^7.1.2"
   },
   "devDependencies": {
     "@types/express": "^4.17.21",
