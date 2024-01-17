@@ -61,6 +61,7 @@ var App = class {
   routes() {
     this.app.use("/", home_default);
     this.app.use("/users", user_default);
+    this.app.use("*", (req, res) => res.render("404"));
   }
   listen(port) {
     this.app.listen(port, () => console.log("Server is running on port http://localhost:3335"));

@@ -24,6 +24,7 @@ class App {
     routes() {
         this.app.use('/', home);
         this.app.use('/users', user);
+        this.app.use('*', (req, res) => res.render('404'));
     }
 
     listen(port: number) {
