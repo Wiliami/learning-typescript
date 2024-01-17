@@ -1,0 +1,1 @@
+export const welcome: string = 'Seja bem-vindo a home'; 

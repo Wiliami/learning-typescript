@@ -1,4 +1,6 @@
 import express, { Application } from 'express';
+import user from './routes/user';
+import welcome from './welcome';
 
 class App {
     public app: Application
@@ -14,9 +16,8 @@ class App {
     }
 
     routes() {
-        this.app.get('/', (req, res) => {
-            return res.json({ ok: true });
-        });
+        this.app.use('/', );
+        this.app.use('/user', user);
     }
 
     listen(port: number) {

@@ -33,21 +33,29 @@ __export(app_exports, {
   App: () => App
 });
 module.exports = __toCommonJS(app_exports);
-var import_express = __toESM(require("express"));
+var import_express2 = __toESM(require("express"));
+
+// src/routes/user.ts
+var import_express = require("express");
+var router = (0, import_express.Router)();
+router.get("/", (req, res) => {
+  return res.json({ message: "Ol\xE1, mundo!" });
+});
+var user_default = router;
+
+// src/app.ts
 var App = class {
   constructor() {
-    this.app = (0, import_express.default)();
+    this.app = (0, import_express2.default)();
     this.config();
     this.routes();
   }
   config() {
-    this.app.use(import_express.default.json());
-    this.app.use(import_express.default.urlencoded({ extended: true }));
+    this.app.use(import_express2.default.json());
+    this.app.use(import_express2.default.urlencoded({ extended: true }));
   }
   routes() {
-    this.app.get("/", (req, res) => {
-      return res.json({ ok: true });
-    });
+    this.app.use("/user", user_default);
   }
   listen(port) {
     this.app.listen(port, () => console.log("Server is running on port htpp://localhost:3335"));
