@@ -39,7 +39,7 @@ var home_default = router;
 var import_express2 = require("express");
 var router2 = (0, import_express2.Router)();
 router2.get("/", (req, res) => {
-  return res.json({ message: "Rota de usu\xE1rios!" });
+  return res.render("users");
 });
 var user_default = router2;
 
@@ -60,7 +60,7 @@ var App = class {
   }
   routes() {
     this.app.use("/", home_default);
-    this.app.use("/user", user_default);
+    this.app.use("/users", user_default);
   }
   listen(port) {
     this.app.listen(port, () => console.log("Server is running on port http://localhost:3335"));
