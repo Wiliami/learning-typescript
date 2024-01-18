@@ -1,12 +1,12 @@
 import express, { Application } from 'express';
 import { engine } from 'express-handlebars';
-import path from "path";
+import path from 'path';
 import home from './routes/home';
 import user from './routes/user';
 import login from './routes/login';
 
 class App {
-    public app: Application
+    public app: Application;
     constructor() {
         this.app = express();
         this.config();
@@ -30,7 +30,7 @@ class App {
     }
 
     listen(port: number) {
-        this.app.listen(port, () => console.log('Server is running on port http://localhost:3335'))
+        this.app.listen(port, () => console.log('Server is running on port http://localhost:3335'));
     }
 }
 

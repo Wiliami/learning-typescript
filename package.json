@@ -7,8 +7,9 @@
   "scripts": {
     "start": "tsx src/teste.ts",
     "start:dev": "tsx watch src/teste.ts",
-    "build": "tsup src/routes/home.ts",
-    "test": "jest"
+    "build": "tsup src/server.ts",
+    "test": "jest",
+    "lint:fix": "eslint --fix --ext .js,.jsx ."
   },
   "dependencies": {
     "express": "^4.18.2",
@@ -18,6 +19,9 @@
     "@types/express": "^4.17.21",
     "@types/jest": "^29.5.11",
     "@types/supertest": "^6.0.2",
+    "@typescript-eslint/eslint-plugin": "^6.19.0",
+    "@typescript-eslint/parser": "^6.19.0",
+    "eslint": "^8.56.0",
     "jest": "^29.7.0",
     "supertest": "^6.3.4",
     "ts-jest": "^29.1.1",

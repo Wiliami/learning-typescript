@@ -1,26 +1,12 @@
-class Animal {
-    constructor(name) {
-        this.name = name
-    };
+/* var */
+// var name = 'Wiliamis';
+// var name = 'BrazJr';
 
-    sound() {
-        console.log(`${this.name} made some sound!`);
-    };
-};
+/* let */
+// let name = 'Wiliamis';
+// name = 'BrazJr';
+// console.log(name);
 
-class Dog extends Animal {
-    constructor(name) {
-        super(name);
-    };
-
-    sound() {
-        console.log(`${this.name} barked`);
-    };
-}
-
-const animal = new Animal('Simba');
-animal.sound();
-console.log(animal);
-const dog = new Dog('Vira-lata');
-dog.sound();
-console.log(dog);
+/* const */
+const name = 'Wiliamis';
+console.log(name);  
