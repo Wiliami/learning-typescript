@@ -7,7 +7,7 @@
   "scripts": {
     "start": "tsx src/teste.ts",
     "start:dev": "tsx watch src/teste.ts",
-    "build": "tsup src/server.ts",
+    "build": "tsup src/routes/home.ts",
     "test": "jest"
   },
   "dependencies": {
