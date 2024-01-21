@@ -17,15 +17,15 @@ var __copyProps = (to, from, except, desc) => {
 };
 var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
 
-// src/routes/home.ts
-var home_exports = {};
-__export(home_exports, {
-  default: () => home_default
+// src/routes/login.ts
+var login_exports = {};
+__export(login_exports, {
+  default: () => login_default
 });
-module.exports = __toCommonJS(home_exports);
+module.exports = __toCommonJS(login_exports);
 var import_express = require("express");
 var router = (0, import_express.Router)();
 router.get("/", (req, res) => {
-  return res.render("home");
+  return res.send("Rota de login");
 });
-var home_default = router;
+var login_default = router;

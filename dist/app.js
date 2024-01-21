@@ -37,7 +37,7 @@ var import_express5 = __toESM(require("express"));
 var import_express_handlebars = require("express-handlebars");
 var import_path = __toESM(require("path"));
 
-// src/routes/index.ts
+// src/routes/main.routes.ts
 var import_express4 = require("express");
 
 // src/routes/home.ts
@@ -64,12 +64,12 @@ router3.get("/", (req, res) => {
 });
 var login_default = router3;
 
-// src/routes/index.ts
+// src/routes/main.routes.ts
 var router4 = (0, import_express4.Router)();
-router4.use("/home", home_default);
+router4.use("/", home_default);
 router4.use("/user", user_default);
 router4.use("/login", login_default);
-var routes_default = router4;
+var main_routes_default = router4;
 
 // src/app.ts
 var App = class {
@@ -87,7 +87,7 @@ var App = class {
     this.app.use(import_express5.default.urlencoded({ extended: true }));
   }
   routes() {
-    this.app.use("/", routes_default);
+    this.app.use("/", main_routes_default);
     this.app.use("*", (req, res) => res.render("404"));
   }
   listen(port) {

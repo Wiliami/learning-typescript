@@ -5,7 +5,7 @@ import login from './login';
 
 const router = Router();
 
-router.use('/home', home);
+router.use('/', home);
 router.use('/user', user);
 router.use('/login', login);
 

@@ -51,7 +51,7 @@ var login_default = router3;
 
 // src/routes/main.routes.ts
 var router4 = (0, import_express4.Router)();
-router4.use("/home", home_default);
+router4.use("/", home_default);
 router4.use("/user", user_default);
 router4.use("/login", login_default);
 var main_routes_default = router4;
