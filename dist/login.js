@@ -26,6 +26,6 @@ module.exports = __toCommonJS(login_exports);
 var import_express = require("express");
 var router = (0, import_express.Router)();
 router.get("/", (req, res) => {
-  return res.send("Rota de login");
+  return res.render("login");
 });
 var login_default = router;

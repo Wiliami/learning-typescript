@@ -23,7 +23,7 @@ __export(main_routes_exports, {
   default: () => main_routes_default
 });
 module.exports = __toCommonJS(main_routes_exports);
-var import_express4 = require("express");
+var import_express3 = require("express");
 
 // src/routes/home.ts
 var import_express = require("express");
@@ -33,25 +33,16 @@ router.get("/", (req, res) => {
 });
 var home_default = router;
 
-// src/routes/user.ts
+// src/routes/login.ts
 var import_express2 = require("express");
 var router2 = (0, import_express2.Router)();
 router2.get("/", (req, res) => {
-  return res.render("users");
+  return res.render("login");
 });
-var user_default = router2;
-
-// src/routes/login.ts
-var import_express3 = require("express");
-var router3 = (0, import_express3.Router)();
-router3.get("/", (req, res) => {
-  return res.send("Rota de login");
-});
-var login_default = router3;
+var login_default = router2;
 
 // src/routes/main.routes.ts
-var router4 = (0, import_express4.Router)();
-router4.use("/", home_default);
-router4.use("/user", user_default);
-router4.use("/login", login_default);
-var main_routes_default = router4;
+var router3 = (0, import_express3.Router)();
+router3.use("/", home_default);
+router3.use("/login", login_default);
+var main_routes_default = router3;

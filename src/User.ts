@@ -17,9 +17,9 @@ class CreateUser {
 
 
 const dataUser = new CreateUser({
-    name: 'Wiliamis',
-    email: 'oliveirawiliamis34@gmail.com',
-    password: '123'
+    name: "Wiliamis",
+    email: "wiliamis@gmail.com",
+    password: "123"
 
 });
 dataUser.welcome();
