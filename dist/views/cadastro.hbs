@@ -1,0 +1,49 @@
+<section class="vh-100">
+        <div class="container py-0 h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-12 col-md-8 col-lg-6 col-xl-4">
+                    <div class="card text-dark" style="border-radius: 1rem;">
+                        <div class="card-body bg-light p-4 rounded text-center">
+                            <div class="section-title">
+                                <h2 class="mb-1 text-center" style="font-size: 25px;">Criar conta</h2>
+                            </div>
+                            <div class="mb-md-0 mt-md-1 pb-1">
+                                {{!-- {{>_preloader}}
+                                {{>_alertDanger}}
+                                {{>_alertSuccess}}
+                                --}}
+                                <form method="POST" action="" id="form" class="form-user">
+                                    <div class="form-floating mb-2">
+                                        <input type="text" class="form-control required" name="username" id="username" placeholder="Nome e sobrenome">
+                                        <label for="inputName" style="font-size: 15px;">Nome</label>
+                                        <span class="span-required text-start" style="font-size: 15px;">Nome deve ter no mínimo 3 caracteres</span>
+                                    </div>
+                                    <div class="form-floating mb-2">
+                                        <input type="email" class="form-control required" name="email" id="email" placeholder="E-mail">
+                                        <label for="inputEmail" style="font-size: 15px;">E-mail</label>
+                                        <span class="span-required text-start" style="font-size: 15px;">Digite um e-mail válido</span> 
+                                    </div>
+                                    <div class="form-floating mb-2">
+                                        <input type="password" class="form-control required" name="password" id="password" placeholder="Senha">
+                                        <label for="inputPassword" style="font-size: 15px;">Senha</label>
+                                        <span class="span-required text-start" style="font-size: 15px;">Digite uma senha com no mínimo 8 caracteres</span>
+                                    </div>
+                                    <div class="form-floating mb-2">
+                                        <input type="password" class="form-control required" name="confirmPassword" id="confirmPassword" autocomplete="on" placeholder="Confirmar senha" title="Senha">
+                                        <label for="inputPassword" style="font-size: 15px;">Confirmar senha</label>
+                                        <span class="span-required text-start" style="font-size: 15px;">Senhas devem ser compatíveis</span>
+                                    </div>
+                                    <input class="btn btn-lg btn-success mt-4 w-100" id="submit" style="font-size: 17px;" type="submit" value="Criar">
+                                </form>
+                                <div class="mt-4">
+                                    <div class="d-flex justify-content-center links">
+                                        <p style="font-size: 15px;"> Já possui uma conta? <a href="/login" class="ml-2">Login</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                </div> 
+            </div>   
+        </div> 
+    </section>   

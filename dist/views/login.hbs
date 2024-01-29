@@ -1,0 +1,41 @@
+<section class="vh-100">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-12 col-md-8 col-lg-6 col-xl-4">
+        <div class="card text-dark" style="border-radius: 1rem;">
+          <div class="card-body bg-light p-5 rounded text-center">
+            <div class="mb-md-0 mt-md-1 pb-1">
+              <div class="section-title">
+                  <h2 class="text-center mb-4" style="font-size: 30px;">Login</h2>
+              </div>   
+              <div id="form" class="form-user">
+                  {{!-- {{>_preloader}}
+                  {{>_alertSuccess}}
+                  {{>_alertDanger}} --}}
+                  <div class="form-floating mb-3">
+                      <input type="email" class="form-control required" name="email" id="email" placeholder="E-mail" autocomplete="off">
+                      <label for="inputEmail" style="font-size: 15px;">E-mail</label>
+                  </div>
+                  <div class="form-floating mb-3">
+                      <input type="password" class="form-control required" name="password" id="password" placeholder="Senha" autocomplete="off">
+                      <label for="inputPassword" style="font-size: 15px;">Senha</label>
+                  </div>
+                  <input class="btn btn-lg btn-success mt-3 w-100" style="font-size: 17px;" id="submit" onclick="login()" type="submit" value="Entrar">
+              <div>
+              <div class="mt-4">
+                  <div class="links">
+                      <p class="mb-0" style="font-size: 15px;">Não tem uma conta? 
+                          <a href="/cadastro">Criar uma</a>
+                      </p>
+                  </div>
+                  <div class="d-flex justify-content-center">
+                      <p style="font-size: 15px;"><a href="/forgot-password">Esqueceu a senha?</a></p>
+                  </div>
+              </div> 
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

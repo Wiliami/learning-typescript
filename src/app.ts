@@ -1,9 +1,7 @@
 import express, { Application } from 'express';
 import { engine } from 'express-handlebars';
 import path from 'path';
-import home from './routes/home';
-import user from './routes/user';
-import login from './routes/login';
+import routes from './routes/main.routes';
 
 class App {
     public app: Application;
@@ -23,9 +21,7 @@ class App {
     }
 
     routes() {
-        this.app.use('/', home);
-        this.app.use('/users', user);
-        this.app.use('/login', login);
+        this.app.use('/', routes);
         this.app.use('*', (req, res) => res.render('404'));
     }
 

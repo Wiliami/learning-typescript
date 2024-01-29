@@ -6,5 +6,5 @@ describe('My first test', () => {
         const app = new App().app;
         const response = await request(app).get('/');
         expect(response.body).toStrictEqual({ ok: true });   
-    })
-})
+    });
+});
