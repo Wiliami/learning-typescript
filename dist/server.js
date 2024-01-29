@@ -23,12 +23,20 @@ var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__ge
 ));
 
 // src/app.ts
+<<<<<<< HEAD
 var import_express5 = __toESM(require("express"));
+=======
+var import_express4 = __toESM(require("express"));
+>>>>>>> d46763a83ae58add719d895fe6c7a7b92c007ca9
 var import_express_handlebars = require("express-handlebars");
 var import_path = __toESM(require("path"));
 
 // src/routes/main.routes.ts
+<<<<<<< HEAD
 var import_express4 = require("express");
+=======
+var import_express3 = require("express");
+>>>>>>> d46763a83ae58add719d895fe6c7a7b92c007ca9
 
 // src/routes/home.ts
 var import_express = require("express");
@@ -46,6 +54,7 @@ router2.get("/", (req, res) => {
 });
 var login_default = router2;
 
+<<<<<<< HEAD
 // src/routes/register.ts
 var import_express3 = require("express");
 var router3 = (0, import_express3.Router)();
@@ -60,21 +69,41 @@ router4.use("/", home_default);
 router4.use("/login", login_default);
 router4.use("/cadastro", register_default);
 var main_routes_default = router4;
+=======
+// src/routes/main.routes.ts
+var router3 = (0, import_express3.Router)();
+router3.use("/", home_default);
+router3.use("/login", login_default);
+var main_routes_default = router3;
+>>>>>>> d46763a83ae58add719d895fe6c7a7b92c007ca9
 
 // src/app.ts
 var App = class {
   constructor() {
+<<<<<<< HEAD
     this.app = (0, import_express5.default)();
+=======
+    this.app = (0, import_express4.default)();
+>>>>>>> d46763a83ae58add719d895fe6c7a7b92c007ca9
     this.config();
     this.routes();
   }
   config() {
+<<<<<<< HEAD
     this.app.use(import_express5.default.static(__dirname + "/public"));
     this.app.set("views", import_path.default.join(__dirname, "views"));
     this.app.engine(".hbs", (0, import_express_handlebars.engine)({ extname: ".hbs" }));
     this.app.set("view engine", ".hbs");
     this.app.use(import_express5.default.json());
     this.app.use(import_express5.default.urlencoded({ extended: true }));
+=======
+    this.app.use(import_express4.default.static(__dirname + "/public"));
+    this.app.set("views", import_path.default.join(__dirname, "views"));
+    this.app.engine(".hbs", (0, import_express_handlebars.engine)({ extname: ".hbs" }));
+    this.app.set("view engine", ".hbs");
+    this.app.use(import_express4.default.json());
+    this.app.use(import_express4.default.urlencoded({ extended: true }));
+>>>>>>> d46763a83ae58add719d895fe6c7a7b92c007ca9
   }
   routes() {
     this.app.use("/", main_routes_default);
