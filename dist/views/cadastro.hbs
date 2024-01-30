@@ -5,7 +5,7 @@
                     <div class="card text-dark" style="border-radius: 1rem;">
                         <div class="card-body bg-light p-4 rounded text-center">
                             <div class="section-title">
-                                <h2 class="mb-1 text-center" style="font-size: 25px;">Criar conta</h2>
+                                <h2 class="mb-4 text-center" style="font-size: 25px;">Criar conta</h2>
                             </div>
                             <div class="mb-md-0 mt-md-1 pb-1">
                                 {{!-- {{>_preloader}}
@@ -16,22 +16,22 @@
                                     <div class="form-floating mb-2">
                                         <input type="text" class="form-control required" name="username" id="username" placeholder="Nome e sobrenome">
                                         <label for="inputName" style="font-size: 15px;">Nome</label>
-                                        <span class="span-required text-start" style="font-size: 15px;">Nome deve ter no mínimo 3 caracteres</span>
+                                        <span class="span-required text-start" style="font-size: 15px; display: none">Nome deve ter no mínimo 3 caracteres</span>
                                     </div>
                                     <div class="form-floating mb-2">
                                         <input type="email" class="form-control required" name="email" id="email" placeholder="E-mail">
                                         <label for="inputEmail" style="font-size: 15px;">E-mail</label>
-                                        <span class="span-required text-start" style="font-size: 15px;">Digite um e-mail válido</span> 
+                                        <span class="span-required text-start" style="font-size: 15px; display: none">Digite um e-mail válido</span> 
                                     </div>
                                     <div class="form-floating mb-2">
                                         <input type="password" class="form-control required" name="password" id="password" placeholder="Senha">
                                         <label for="inputPassword" style="font-size: 15px;">Senha</label>
-                                        <span class="span-required text-start" style="font-size: 15px;">Digite uma senha com no mínimo 8 caracteres</span>
+                                        <span class="span-required text-start" style="font-size: 15px; display: none">Digite uma senha com no mínimo 8 caracteres</span>
                                     </div>
                                     <div class="form-floating mb-2">
                                         <input type="password" class="form-control required" name="confirmPassword" id="confirmPassword" autocomplete="on" placeholder="Confirmar senha" title="Senha">
                                         <label for="inputPassword" style="font-size: 15px;">Confirmar senha</label>
-                                        <span class="span-required text-start" style="font-size: 15px;">Senhas devem ser compatíveis</span>
+                                        <span class="span-required text-start" style="font-size: 15px; display: none">Senhas devem ser compatíveis</span>
                                     </div>
                                     <input class="btn btn-lg btn-success mt-4 w-100" id="submit" style="font-size: 17px;" type="submit" value="Criar">
                                 </form>
