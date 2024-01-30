@@ -23,7 +23,7 @@ __export(main_routes_exports, {
   default: () => main_routes_default
 });
 module.exports = __toCommonJS(main_routes_exports);
-var import_express4 = require("express");
+var import_express5 = require("express");
 
 // src/routes/home.ts
 var import_express = require("express");
@@ -49,9 +49,18 @@ router3.get("/", (req, res) => {
 });
 var register_default = router3;
 
-// src/routes/main.routes.ts
+// src/routes/user.ts
+var import_express4 = require("express");
 var router4 = (0, import_express4.Router)();
-router4.use("/", home_default);
-router4.use("/login", login_default);
-router4.use("/cadastro", register_default);
-var main_routes_default = router4;
+router4.get("/", (req, res) => {
+  return res.render("dashboard");
+});
+var user_default = router4;
+
+// src/routes/main.routes.ts
+var router5 = (0, import_express5.Router)();
+router5.use("/", home_default);
+router5.use("/login", login_default);
+router5.use("/cadastro", register_default);
+router5.use("/dashboard", user_default);
+var main_routes_default = router5;

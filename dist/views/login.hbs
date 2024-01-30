@@ -9,9 +9,8 @@
                                 <h2 class="text-center mb-4" style="font-size: 30px;">Login</h2>
                             </div>   
                             <div id="form" class="form-user">
-                                {{!-- {{>_preloader}}
-                                {{>_alertSuccess}}
-                                {{>_alertDanger}} --}}
+                                {{!-- {{>_preloader}} --}}
+                                {{>_alert-danger}}
                                 <div class="form-floating mb-3">
                                     <input type="email" class="form-control required" name="email" id="email" placeholder="E-mail" autocomplete="off">
                                     <label for="inputEmail" style="font-size: 15px;">E-mail</label>
@@ -20,7 +19,7 @@
                                 <div class="form-floating mb-3">
                                     <input type="password" class="form-control required" name="password" id="password" placeholder="Senha" autocomplete="off">
                                     <label for="inputPassword" style="font-size: 15px;">Senha</label>
-                                    <span class="span-required text-start" style="font-size: 15px; display: none">A senha precisa conter pelos 8 caracteres.</span> 
+                                    <span class="span-required text-start" style="font-size: 15px; display: none">A senha precisa conter pelos 6 caracteres.</span> 
                                 </div>
                                 <input class="btn btn-lg btn-success mt-3 w-100" style="font-size: 17px;" id="submit" onclick="login()" type="submit" value="Entrar">
                             <div>
@@ -42,4 +41,8 @@
     </div>
 </section>
 
-<script src="../public/assets/js/forms/login/script.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-auth-compat.js"></script>
+<script src="/assets/js/firebase/firebase-init.js"></script>
+<script src="/assets/js/forms/login/login-firebase.js"></script>
