@@ -1,0 +1,47 @@
+  {{!-- {{>_navbarDashboard}}
+  {{>_sidebarDashboard}} --}}
+  <main id="main" class="main">
+    <h1 id="usersame"></h1>
+    <div class="pagetitle">
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="/dashboard">Página inicial</a></li>
+        </ol>
+      </nav>
+    </div>
+    <button id="getDataBtn" class="btn btn-success">Obter Dados</button>
+    <div id="dataContainer"></div>
+    <section class="section">
+      <div class="row">
+        <!-- Left side columns -->
+        <div class="col-lg-4">
+          <div class="row">
+              <tboby id="users"></tbody>
+          </div>
+        </div>
+        
+      </div> <!-- End row container -->
+
+    </section>
+  </main><!-- End #main -->
+  {{!-- {{>_preloader}}
+  {{>_footerDashboard}}
+  {{>_footerFilesDashboard}} --}}
+  {{!-- <script src="../services/api/github.service.js"></script> --}}
+  <script>
+      /* document.getElementById('getDataBtn').addEventListener('click', () => {
+        fetch('http://localhost:8080/api/data')
+        .then(response => response.json())
+        .then(data => console.log(data))  
+        .catch(error => console.log('Error:', error)) 
+      });
+      */
+  </script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore-compat.js"></script>
+  <script src="/assets/js/firebase-init.js"></script>
+  <script src="/assets/js/auth-guard.js"></script>
+  <script src="/assets/js/home.js"></script>
+  <script src="/assets/js/logout.js"></script>
+  <script src="/assets/js/loading.js"></script>

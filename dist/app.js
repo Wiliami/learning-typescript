@@ -33,12 +33,12 @@ __export(app_exports, {
   App: () => App
 });
 module.exports = __toCommonJS(app_exports);
-var import_express5 = __toESM(require("express"));
+var import_express6 = __toESM(require("express"));
 var import_express_handlebars = require("express-handlebars");
 var import_path = __toESM(require("path"));
 
 // src/routes/main.routes.ts
-var import_express4 = require("express");
+var import_express5 = require("express");
 
 // src/routes/home.ts
 var import_express = require("express");
@@ -64,27 +64,36 @@ router3.get("/", (req, res) => {
 });
 var register_default = router3;
 
-// src/routes/main.routes.ts
+// src/routes/user.ts
+var import_express4 = require("express");
 var router4 = (0, import_express4.Router)();
-router4.use("/", home_default);
-router4.use("/login", login_default);
-router4.use("/cadastro", register_default);
-var main_routes_default = router4;
+router4.get("/", (req, res) => {
+  return res.render("dashboard");
+});
+var user_default = router4;
+
+// src/routes/main.routes.ts
+var router5 = (0, import_express5.Router)();
+router5.use("/", home_default);
+router5.use("/login", login_default);
+router5.use("/cadastro", register_default);
+router5.use("/dashboard", user_default);
+var main_routes_default = router5;
 
 // src/app.ts
 var App = class {
   constructor() {
-    this.app = (0, import_express5.default)();
+    this.app = (0, import_express6.default)();
     this.config();
     this.routes();
   }
   config() {
-    this.app.use(import_express5.default.static(__dirname + "/public"));
+    this.app.use(import_express6.default.static(__dirname + "/public"));
     this.app.set("views", import_path.default.join(__dirname, "views"));
     this.app.engine(".hbs", (0, import_express_handlebars.engine)({ extname: ".hbs" }));
     this.app.set("view engine", ".hbs");
-    this.app.use(import_express5.default.json());
-    this.app.use(import_express5.default.urlencoded({ extended: true }));
+    this.app.use(import_express6.default.json());
+    this.app.use(import_express6.default.urlencoded({ extended: true }));
   }
   routes() {
     this.app.use("/", main_routes_default);
