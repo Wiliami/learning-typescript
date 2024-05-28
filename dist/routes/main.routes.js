@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 "use strict";
 var __defProp = Object.defineProperty;
 var __getOwnPropDesc = Object.getOwnPropertyDescriptor;

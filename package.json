@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "start": "tsx src/routes/home.ts",
-    "start:dev": "tsx watch src/teste.ts",
+    "start:dev": "tsx watch src/http/server.ts",
     "build": "tsup src/",
     "test": "jest",
     "lint:fix": "eslint --fix --ext .js,.jsx ."
