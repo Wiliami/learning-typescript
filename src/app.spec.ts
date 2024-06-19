@@ -1,5 +1,5 @@
 import request from "supertest";
-import { App } from "./app";
+import { App } from "./http/app";
 
 describe("My first test", () => {
     it("Should test the server running", async () => {
