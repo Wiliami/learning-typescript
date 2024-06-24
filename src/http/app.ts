@@ -11,7 +11,7 @@ class App {
         this.routes();
     }
 
-    config() {
+    private config(): void {
         this.app.engine(".hbs", engine({
             extname: ".hbs",
             defaultLayout: "main",
@@ -23,12 +23,21 @@ class App {
         this.app.set("views", path.join(__dirname, "../views"));
 
         // Configuração dos middlewares
-        this.app.use(express.static(__dirname + "/public"));
+        this.app.use(express.static(path.join(__dirname + "../public")));
         this.app.use(express.json());
         this.app.use(express.urlencoded({ extended: true }));
+
+
+        // this.app.engine('hbs', engine({ extname: '.hbs'}));
+        // this.app.set('view engine', '.hbs');
+        // this.app.set('views', path.join(__dirname, 'views'));
+
+        // this.app.use(express.static(path.join(__dirname, 'public')));
+
+
     }
 
-    routes() {
+    private routes(): void {
         this.app.use("/", routes);
         this.app.use("*", (req, res) => res.render("404"));
     }
