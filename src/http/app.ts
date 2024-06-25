@@ -2,6 +2,12 @@ import express, { Application } from "express";
 import { engine } from "express-handlebars";
 import path from "path";
 import routes from "../routes";
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 class App {
     public app: Application;

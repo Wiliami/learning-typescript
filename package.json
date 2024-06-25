@@ -7,7 +7,7 @@
   "scripts": {
     "start": "tsx src/routes/home.ts",
     "dev": "tsx watch src/http/server.ts",
-    "build": "tsup src/",
+    "build": "tsup src/http/server.ts",
     "test": "jest",
     "lint:fix": "eslint --fix --ext .js,.jsx ."
   },

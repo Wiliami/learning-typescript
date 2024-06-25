@@ -4,7 +4,7 @@ var __defProp = Object.defineProperty;
 var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
 var __getOwnPropNames = Object.getOwnPropertyNames;
 var __getProtoOf = Object.getPrototypeOf;
-var __hasOwnProp = Object.prototype.hasOwnPro perty;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
 var __copyProps = (to, from, except, desc) => {
   if (from && typeof from === "object" || typeof from === "function") {
     for (let key of __getOwnPropNames(from))
@@ -22,12 +22,12 @@ var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__ge
   mod
 ));
 
-// src/app.ts
+// src/http/app.ts
 var import_express6 = __toESM(require("express"));
 var import_express_handlebars = require("express-handlebars");
 var import_path = __toESM(require("path"));
 
-// src/routes/main.routes.ts
+// src/routes/index.ts
 var import_express5 = require("express");
 
 // src/routes/home.ts
@@ -54,39 +54,45 @@ router3.get("/", (req, res) => {
 });
 var register_default = router3;
 
-// src/routes/user.ts
+// src/routes/users/index.ts
 var import_express4 = require("express");
 var router4 = (0, import_express4.Router)();
 router4.get("/", (req, res) => {
-  return res.render("dashboard");
+  return res.render("users");
 });
-var user_default = router4;
+var users_default = router4;
 
-// src/routes/main.routes.ts
+// src/routes/index.ts
 var router5 = (0, import_express5.Router)();
 router5.use("/", home_default);
 router5.use("/login", login_default);
 router5.use("/cadastro", register_default);
-router5.use("/dashboard", user_default);
-var main_routes_default = router5;
+router5.use("/dashboard", users_default);
+var routes_default = router5;
 
-// src/app.ts
+// src/http/app.ts
 var App = class {
+  app;
   constructor() {
     this.app = (0, import_express6.default)();
     this.config();
     this.routes();
   }
   config() {
-    this.app.use(import_express6.default.static(__dirname + "/public"));
-    this.app.set("views", import_path.default.join(__dirname, "views"));
-    this.app.engine(".hbs", (0, import_express_handlebars.engine)({ extname: ".hbs" }));
+    this.app.engine(".hbs", (0, import_express_handlebars.engine)({
+      extname: ".hbs",
+      defaultLayout: "main",
+      layoutsDir: import_path.default.join(__dirname, "views", "layouts"),
+      partialsDir: import_path.default.join(__dirname, "views", "partials")
+    }));
     this.app.set("view engine", ".hbs");
+    this.app.set("views", import_path.default.join(__dirname, "../views"));
+    this.app.use(import_express6.default.static(import_path.default.join(__dirname + "../public")));
     this.app.use(import_express6.default.json());
     this.app.use(import_express6.default.urlencoded({ extended: true }));
   }
   routes() {
-    this.app.use("/", main_routes_default);
+    this.app.use("/", routes_default);
     this.app.use("*", (req, res) => res.render("404"));
   }
   listen(port) {
@@ -94,6 +100,6 @@ var App = class {
   }
 };
 
-// src/server.ts
+// src/http/server.ts
 var app = new App();
 app.listen(3335);
